@@ -6,11 +6,17 @@ import (
 	"log"
 	"mytcp/cmd/pkg/utils"
 	"time"
-	"encoding/binary"
-	"bytes"
+	"mytcp/cmd/pkg/process"
 )
 
+//TODO: replace fmt.Printx with log.Printx or glog @songjiang
+
+func init(){
+	log.SetFlags(log.Lshortfile| log.LstdFlags)
+}
+
 const(
+	//TODO: read from env or config file @songjiang
 	MaxQueueSize = 50000
 	MaxWorkers = 50000
 )
@@ -143,36 +149,6 @@ func reader(readerCh chan []byte){
 	}
 }
 
-//bytesToInt get msg length
-func bytesToInt(b []byte)int{
-	byteBuffer := bytes.NewBuffer(b)
-	var x int32
-	binary.Read(byteBuffer, binary.BigEndian, &x)
-	return int(x)
-}
-
-func unPacket(buffer []byte, readerCh chan []byte)[]byte{
-	length := len(buffer)
-	var i int
-	for i = 0;i< length;i++{
-		if length < i + 4{
-			break
-		}
-		msgLength := bytesToInt(buffer[i:i+4])
-
-		if length < i + 4 + msgLength{
-			break
-		}
-		data := buffer[i+4:i+4+msgLength]
-		fmt.Println(string(data))
-		//readerCh <- data
-		i += msgLength + 4 - 1
-	}
-	if i == length{
-		return make([]byte,0)
-	}
-	return buffer[i:]
-}
 
 func handleNewFunc(c net.Conn){
 	var(
@@ -181,7 +157,7 @@ func handleNewFunc(c net.Conn){
 	)
 	defer c.Close()
 	readerChan := make(chan []byte,20)
-	//go reader(readerChan)
+	go reader(readerChan)
 
 	for{
 		n, err := c.Read(buff)	//?
@@ -189,14 +165,7 @@ func handleNewFunc(c net.Conn){
 			log.Println(err)
 			return
 		}
-		tmpBuff = unPacket(append(tmpBuff,buff[:n]...), readerChan)
-		//fmt.Println(n ,string(buff[:n]))
-		//n ,err = c.Write(buff[:n])
-		//if err != nil{
-		//	log.Println(err)
-		//	return
-		//}
-		//fmt.Printf("write %d data\n", n)
+		tmpBuff = process.UnPacket(append(tmpBuff,buff[:n]...), readerChan)
 	}
 }
 
@@ -206,13 +175,11 @@ func handleFunc(c net.Conn){
 	time.Sleep(10*time.Second)
 	var buff = make([]byte,1024)
 	n, err := c.Read(buff)
-	//content, err := bufio.NewReader(c).ReadString('\n')
 	if err != nil{
 		log.Println(err)
 		return
 	}
 	fmt.Println(string(buff))
-
 	n ,err = c.Write(buff)
 	if err != nil{
 		log.Println(err)

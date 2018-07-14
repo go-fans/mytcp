@@ -39,6 +39,7 @@ to quickly create a Cobra application.`,
 			panic(err)
 		}
 		tcpserver2.TcpServerCreate(serverInfo)
+		//TODO: set signals @chenchao
 	},
 }
 
