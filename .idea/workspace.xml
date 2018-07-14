@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="316dab69-4cd3-4332-8e35-c006389bba48" name="Default" comment="" />
+    <list default="true" id="316dab69-4cd3-4332-8e35-c006389bba48" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/cmd/tcpclient/tcpclient.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/tcpclient/tcpclient.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/tcpserver/tcpserver.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/tcpserver/tcpserver.go" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,16 +18,16 @@
         <entry file="file://$PROJECT_DIR$/cmd/tcpserver.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="308">
-              <caret line="40" column="24" lean-forward="true" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
+              <caret line="40" column="45" lean-forward="true" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="45" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tcpserver.go" pinned="false" current-in-tab="false">
+      <file leaf-file-name="tcpserver.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cmd/tcpserver/tcpserver.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="37" column="25" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="25" />
+            <state relative-caret-position="488">
+              <caret line="51" column="18" lean-forward="true" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="18" />
               <folding>
                 <element signature="e#19#79#0" expanded="true" />
               </folding>
@@ -41,53 +44,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tcpclient.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="tcpclient.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cmd/tcpclient/tcpclient.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+            <state relative-caret-position="352">
+              <caret line="36" column="9" lean-forward="true" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
               <folding>
                 <element signature="e#19#82#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="utils.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cmd/pkg/utils/utils.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="490">
-              <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
-              <folding>
-                <element signature="e#15#47#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dial.go" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/go/src/net/dial.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="291" column="1" lean-forward="true" selection-start-line="291" selection-start-column="1" selection-end-line="291" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="net.go" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/go/src/net/net.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="152" column="19" selection-start-line="152" selection-start-column="4" selection-end-line="152" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tcpclient.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cmd/tcpclient.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="38" column="24" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -102,14 +66,17 @@
     </option>
   </component>
   <component name="GOROOT" path="$USER_HOME$/go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/cmd/tcpclient.go" />
         <option value="$PROJECT_DIR$/cmd/tcpserver.go" />
-        <option value="$PROJECT_DIR$/cmd/tcpserver/tcpserver.go" />
         <option value="$PROJECT_DIR$/cmd/pkg/utils/utils.go" />
         <option value="$PROJECT_DIR$/cmd/tcpclient/tcpclient.go" />
+        <option value="$PROJECT_DIR$/cmd/tcpserver/tcpserver.go" />
       </list>
     </option>
   </component>
@@ -128,6 +95,7 @@
     <option name="width" value="979" />
     <option name="height" value="570" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -144,25 +112,6 @@
               <item name="mytcp" type="b2602c69:ProjectViewProjectNode" />
               <item name="mytcp" type="462c0819:PsiDirectoryNode" />
               <item name="cmd" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mytcp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mytcp" type="462c0819:PsiDirectoryNode" />
-              <item name="cmd" type="462c0819:PsiDirectoryNode" />
-              <item name="pkg" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mytcp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mytcp" type="462c0819:PsiDirectoryNode" />
-              <item name="cmd" type="462c0819:PsiDirectoryNode" />
-              <item name="pkg" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mytcp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mytcp" type="462c0819:PsiDirectoryNode" />
-              <item name="cmd" type="462c0819:PsiDirectoryNode" />
-              <item name="tcpclient" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mytcp" type="b2602c69:ProjectViewProjectNode" />
@@ -201,13 +150,13 @@
     <frame x="-1" y="-11" width="1405" height="810" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23307198" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16892374" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
@@ -292,17 +241,10 @@
     <entry file="file://$PROJECT_DIR$/main.go">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/cmd/tcpserver.go">
+    <entry file="file://$USER_HOME$/go/src/net/net.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="40" column="24" lean-forward="true" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmd/tcpclient.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="38" column="24" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
+        <state relative-caret-position="324">
+          <caret line="152" column="19" selection-start-line="152" selection-start-column="4" selection-end-line="152" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -313,29 +255,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/go/src/net/net.go">
+    <entry file="file://$PROJECT_DIR$/cmd/tcpclient.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="152" column="19" selection-start-line="152" selection-start-column="4" selection-end-line="152" selection-end-column="19" />
+        <state relative-caret-position="286">
+          <caret line="38" column="24" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cmd/pkg/utils/utils.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
+        <state relative-caret-position="182">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
           <folding>
             <element signature="e#15#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmd/tcpserver/tcpserver.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="37" column="25" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="25" />
-          <folding>
-            <element signature="e#19#79#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -347,12 +279,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/cmd/tcpserver.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="40" column="45" lean-forward="true" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/cmd/tcpclient/tcpclient.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        <state relative-caret-position="352">
+          <caret line="36" column="9" lean-forward="true" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
           <folding>
             <element signature="e#19#82#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmd/tcpserver/tcpserver.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="488">
+          <caret line="51" column="18" lean-forward="true" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="18" />
+          <folding>
+            <element signature="e#19#79#0" expanded="true" />
           </folding>
         </state>
       </provider>

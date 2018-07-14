@@ -2,7 +2,6 @@ package tcpserver
 
 import (
 	"net"
-	"io"
 	"fmt"
 	"log"
 	"mytcp/cmd/pkg/utils"
@@ -32,12 +31,48 @@ func TcpServerCreate(s *utils.ServerInfo){
 		// Handle the connection in a new goroutine.
 		// The loop then returns to accepting, so that
 		// multiple connections may be served concurrently.
-		time.Sleep(10*time.Second)
-		go func(c net.Conn) {
-			// Echo all incoming data.
-			io.Copy(c, c)
-			// Shut down the connection.
-			c.Close()
-		}(conn)
+		go handleNewFunc(conn)
 	}
 }
+
+
+func handleNewFunc(c net.Conn){
+	defer c.Close()
+	var buff = make([]byte,1024)
+	for{
+		n, err := c.Read(buff)
+		if err != nil{
+			log.Println(err)
+			return
+		}
+		fmt.Println(n ,string(buff[:n]))
+		//n ,err = c.Write(buff)
+		//if err != nil{
+		//	log.Println(err)
+		//	return
+		//}
+		//fmt.Printf("write %d data\n", n)
+	}
+}
+
+
+func handleFunc(c net.Conn){
+	defer c.Close()
+	time.Sleep(10*time.Second)
+	var buff = make([]byte,1024)
+	n, err := c.Read(buff)
+	//content, err := bufio.NewReader(c).ReadString('\n')
+	if err != nil{
+		log.Println(err)
+		return
+	}
+	fmt.Println(string(buff))
+
+	n ,err = c.Write(buff)
+	if err != nil{
+		log.Println(err)
+		return
+	}
+	fmt.Printf("write %d data\n", n)
+}
+
