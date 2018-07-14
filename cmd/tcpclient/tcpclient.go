@@ -20,7 +20,7 @@ func ConnectServer(s *utils.ServerInfo) {
 	//data := "this is client...\n"
 	addr := fmt.Sprintf("%s:%d",s.Host,s.Port)
 	var wg  sync.WaitGroup
-
+	//TODO xxx
 	for i :=0;i < 1000;i++{
 		wg.Add(1)
 		conn, err := net.DialTimeout(s.Proto, addr,time.Second*5)

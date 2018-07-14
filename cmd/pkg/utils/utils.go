@@ -6,6 +6,7 @@ import (
 	"time"
 )
 
+
 //ServerInfo xxx
 type ServerInfo struct{
 	Host string

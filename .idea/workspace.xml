@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="316dab69-4cd3-4332-8e35-c006389bba48" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/cmd/tcpserver2/tcpserver2.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmd/pkg/utils/utils.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/pkg/utils/utils.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmd/tcpclient/tcpclient.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/tcpclient/tcpclient.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/tcpserver.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/tcpserver.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/tcpserver/tcpserver.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/tcpserver/tcpserver.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,8 +29,8 @@
       <file leaf-file-name="tcpserver2.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cmd/tcpserver2/tcpserver2.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="588">
-              <caret line="164" column="9" lean-forward="true" selection-start-line="164" selection-start-column="9" selection-end-line="164" selection-end-column="9" />
+            <state relative-caret-position="202">
+              <caret line="107" column="16" lean-forward="true" selection-start-line="107" selection-start-column="16" selection-end-line="107" selection-end-column="16" />
               <folding>
                 <element signature="e#20#110#0" expanded="true" />
               </folding>
@@ -41,11 +38,35 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tcpclient.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="utils.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cmd/pkg/utils/utils.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="117">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+              <folding>
+                <element signature="e#15#47#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tcpclient.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/cmd/tcpclient/tcpclient.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="31" column="10" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
+            <state relative-caret-position="220">
+              <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cr.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/cr.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="110">
+                <caret line="5" column="52" selection-start-line="5" selection-start-column="52" selection-end-line="5" selection-end-column="52" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -67,15 +88,15 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/cmd/tcpclient.go" />
-        <option value="$PROJECT_DIR$/cmd/pkg/utils/utils.go" />
         <option value="$PROJECT_DIR$/cmd/cr.md" />
-        <option value="$PROJECT_DIR$/cr.md" />
         <option value="$PROJECT_DIR$/cmd/tcpserver/tcpserver.go" />
         <option value="$PROJECT_DIR$/cmd/tcpserver2/tcpserver.go" />
         <option value="$PROJECT_DIR$/cmd/httpserver-v2.go" />
         <option value="$PROJECT_DIR$/cmd/tcpserver.go" />
         <option value="$PROJECT_DIR$/cmd/tcpserver2/tcpserver2.go" />
+        <option value="$PROJECT_DIR$/cmd/pkg/utils/utils.go" />
         <option value="$PROJECT_DIR$/cmd/tcpclient/tcpclient.go" />
+        <option value="$PROJECT_DIR$/cr.md" />
       </list>
     </option>
   </component>
@@ -111,6 +132,19 @@
               <item name="mytcp" type="b2602c69:ProjectViewProjectNode" />
               <item name="mytcp" type="462c0819:PsiDirectoryNode" />
               <item name="cmd" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mytcp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mytcp" type="462c0819:PsiDirectoryNode" />
+              <item name="cmd" type="462c0819:PsiDirectoryNode" />
+              <item name="pkg" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mytcp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mytcp" type="462c0819:PsiDirectoryNode" />
+              <item name="cmd" type="462c0819:PsiDirectoryNode" />
+              <item name="pkg" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mytcp" type="b2602c69:ProjectViewProjectNode" />
@@ -313,16 +347,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cmd/pkg/utils/utils.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="e#15#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -335,21 +359,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cr.md">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="506">
-            <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -397,10 +406,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/cmd/pkg/utils/utils.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#15#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/cmd/tcpserver2/tcpserver2.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="164" column="9" lean-forward="true" selection-start-line="164" selection-start-column="9" selection-end-line="164" selection-end-column="9" />
+        <state relative-caret-position="202">
+          <caret line="107" column="16" lean-forward="true" selection-start-line="107" selection-start-column="16" selection-end-line="107" selection-end-column="16" />
           <folding>
             <element signature="e#20#110#0" expanded="true" />
           </folding>
@@ -409,8 +428,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cmd/tcpclient/tcpclient.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="31" column="10" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
+        <state relative-caret-position="220">
+          <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cr.md">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="110">
+            <caret line="5" column="52" selection-start-line="5" selection-start-column="52" selection-end-line="5" selection-end-column="52" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
