@@ -10,6 +10,16 @@ import (
 	"bytes"
 )
 
+const(
+	MaxQueueSize = 5
+)
+
+type Job struct{
+	conn net.Conn
+}
+
+var jobQueue = make(chan Job, MaxQueueSize)
+
 //TcpServerCreate xxx
 func TcpServerCreate(s *utils.ServerInfo){
 	// Listen on TCP port 2000 on all available unicast and
@@ -21,6 +31,15 @@ func TcpServerCreate(s *utils.ServerInfo){
 		log.Fatal(err)
 	}
 	defer l.Close()
+	go func(){
+		for{
+			select{
+			case job := <- jobQueue:
+				go handleNewFunc(job.conn)	//do job
+			}
+		}
+	}()
+
 	for {
 		// Wait for a connection.
 		fmt.Println("Accept....")
@@ -33,9 +52,17 @@ func TcpServerCreate(s *utils.ServerInfo){
 		// Handle the connection in a new goroutine.
 		// The loop then returns to accepting, so that
 		// multiple connections may be served concurrently.
-		handleNewFunc(conn)
+		//go handleNewFunc(conn)
+		if len(jobQueue) == MaxQueueSize{
+			fmt.Println("job queue full....")
+		}
+		jobQueue <- Job{
+			conn:conn,
+		}
 	}
 }
+
+
 
 func reader(readerCh chan []byte){
 	for {
@@ -62,6 +89,10 @@ func unPacket(buffer []byte, readerCh chan []byte)[]byte{
 			break
 		}
 		msgLength := bytesToInt(buffer[i:i+4])
+
+		if length < i + 4 + msgLength{
+			break
+		}
 		data := buffer[i+4:i+4+msgLength]
 		readerCh <- data
 		i += msgLength + 4 - 1
@@ -74,7 +105,7 @@ func unPacket(buffer []byte, readerCh chan []byte)[]byte{
 
 func handleNewFunc(c net.Conn){
 	var(
-	 buff = make([]byte,1024)
+	 buff = make([]byte,256)
 	 tmpBuff = make([]byte,0)
 	)
 	defer c.Close()

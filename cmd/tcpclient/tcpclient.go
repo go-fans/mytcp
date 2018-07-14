@@ -14,18 +14,20 @@ import (
 func ConnectServer(s *utils.ServerInfo) {
 	//data := "this is client...\n"
 	addr := fmt.Sprintf("%s:%d",s.Host,s.Port)
-	conn, err := net.DialTimeout(s.Proto, addr,time.Second*2)
-	if err != nil {
-		log.Fatal(err)
-		return
-	}
-	defer conn.Close()
-	utils.SetTimeOut(conn, 2)
 	var wg  sync.WaitGroup
-	wg.Add(1)
-	go sender(conn, &wg)
-	wg.Wait()
 
+	for i :=0;i < 10;i++{
+		wg.Add(1)
+		conn, err := net.DialTimeout(s.Proto, addr,time.Second*2)
+		if err != nil {
+			log.Fatal(err)
+			return
+		}
+		defer conn.Close()
+		utils.SetTimeOut(conn, 2)
+		go sender(conn, &wg)
+	}
+	wg.Wait()
 }
 
 func intToByte(n int)[]byte{
