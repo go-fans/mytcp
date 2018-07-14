@@ -7,6 +7,8 @@ import (
 	"mytcp/cmd/pkg/utils"
 	"time"
 	"sync"
+	"bytes"
+	"encoding/binary"
 )
 
 func ConnectServer(s *utils.ServerInfo) {
@@ -26,21 +28,37 @@ func ConnectServer(s *utils.ServerInfo) {
 
 }
 
+func intToByte(n int)[]byte{
+	x := int32(n)
+	byteBuffer := bytes.NewBuffer([]byte{})
+	binary.Write(byteBuffer, binary.BigEndian,x)
+	return byteBuffer.Bytes()
+}
+
+func Packet(msg []byte)[]byte{
+	s := make([]byte,0)
+	return append(append(s, intToByte(len(msg))...), msg...)
+}
+
 func sender(conn net.Conn, wg *sync.WaitGroup){
 	defer wg.Done()
 	for i:=0;i< 300;i++{
 		data := fmt.Sprintf("{\"ID\":%d, \"Name\":\"user-%d\"}", i,i)
-		n , err := conn.Write([]byte(data))
+
+		n , err := conn.Write(Packet([]byte(data)))	// ?
 		if err != nil{
 			log.Println(err.Error())
-			return
+			continue
 		}
-		fmt.Printf("write %d data\n",n)
-		//
-		//content, err := bufio.NewReader(conn).ReadString('\n')
+		fmt.Printf("index %d, write %d data\n",i,n)
+		////
+		//buf := make([]byte, n)
+		//n , err = conn.Read(buf)
+		////content, err := bufio.NewReader(conn).ReadString('\n')
 		//if err != nil{
-		//	log.Fatal(err)
+		//	log.Println(err.Error())
+		//	continue
 		//}
-		//fmt.Println(content)
+		//fmt.Println(n,string(buf))
 	}
 }
