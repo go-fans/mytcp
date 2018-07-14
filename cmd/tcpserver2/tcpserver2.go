@@ -1,4 +1,4 @@
-package tcpserver
+package tcpserver2
 
 import (
 	"net"
@@ -11,7 +11,8 @@ import (
 )
 
 const(
-	MaxQueueSize = 5
+	MaxQueueSize = 50000
+	MaxWorkers = 50000
 )
 
 type Job struct{
@@ -19,6 +20,82 @@ type Job struct{
 }
 
 var jobQueue = make(chan Job, MaxQueueSize)
+var quit = make(chan bool)
+
+type Worker struct{
+	ID int
+	WorkPool chan chan Job
+	JobChannel chan Job
+	Quit chan bool
+}
+
+func NewWorker(workerPool chan chan Job, id int ) Worker {
+	return Worker{
+		ID:id,
+		WorkPool:workerPool,
+		JobChannel:make(chan Job),
+		Quit: make(chan bool),
+	}
+}
+
+func (w Worker) Start(){
+	go func(){
+		for {
+			w.WorkPool <- w.JobChannel
+			fmt.Printf("w.WorkPool <- w.JobChannel id: %d\n", w.ID)
+			select{
+			case job := <- w.JobChannel:
+				//job.Do
+				handleNewFunc(job.conn)
+			case <-w.Quit:
+				return
+			}
+		}
+	}()
+}
+
+func (w Worker)Stop(){
+	go func(){
+		w.Quit <- true
+	}()
+}
+
+type Dispatcher struct {
+	// A pool of workers channels that are registered with the dispatcher
+	WorkerPool chan chan Job
+}
+
+func NewDispatcher() *Dispatcher {
+	pool := make(chan chan Job, MaxWorkers)
+	return &Dispatcher{WorkerPool: pool}
+}
+
+func (d *Dispatcher) Run() {
+	// starting n number of workers
+	for i := 0; i < MaxWorkers; i++ {
+		worker := NewWorker(d.WorkerPool, i)
+		worker.Start()
+	}
+
+	go d.dispatch()
+}
+
+func (d *Dispatcher) dispatch() {
+	for {
+		select {
+		case job := <-jobQueue:
+			// a job request has been received
+			go func(job Job) {
+				// try to obtain a worker job channel that is available.
+				// this will block until a worker is idle
+				jobChannel := <-d.WorkerPool
+
+				// dispatch the job to the worker job channel
+				jobChannel <- job
+			}(job)
+		}
+	}
+}
 
 //TcpServerCreate xxx
 func TcpServerCreate(s *utils.ServerInfo){
@@ -31,14 +108,8 @@ func TcpServerCreate(s *utils.ServerInfo){
 		log.Fatal(err)
 	}
 	defer l.Close()
-	go func(){
-		for{
-			select{
-			case job := <- jobQueue:
-				go handleNewFunc(job.conn)	//do job
-			}
-		}
-	}()
+	dispatcher := NewDispatcher()
+	dispatcher.Run()
 
 	for {
 		// Wait for a connection.
@@ -54,7 +125,7 @@ func TcpServerCreate(s *utils.ServerInfo){
 		// multiple connections may be served concurrently.
 		//go handleNewFunc(conn)
 		if len(jobQueue) == MaxQueueSize{
-			fmt.Println("job queue full....")
+			fmt.Println("job queue full....................................................")
 		}
 		jobQueue <- Job{
 			conn:conn,
@@ -93,7 +164,8 @@ func unPacket(buffer []byte, readerCh chan []byte)[]byte{
 			break
 		}
 		data := buffer[i+4:i+4+msgLength]
-		readerCh <- data
+		fmt.Println(string(data))
+		//readerCh <- data
 		i += msgLength + 4 - 1
 	}
 	if i == length{
@@ -109,7 +181,7 @@ func handleNewFunc(c net.Conn){
 	)
 	defer c.Close()
 	readerChan := make(chan []byte,20)
-	go reader(readerChan)
+	//go reader(readerChan)
 
 	for{
 		n, err := c.Read(buff)	//?

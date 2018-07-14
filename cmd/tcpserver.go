@@ -16,9 +16,9 @@ package cmd
 
 import (
 	"fmt"
-	"mytcp/cmd/tcpserver"
 	"github.com/spf13/cobra"
 	"mytcp/cmd/pkg/utils"
+	"mytcp/cmd/tcpserver2"
 )
 
 // tcpserverCmd represents the tcpserver command
@@ -38,7 +38,7 @@ to quickly create a Cobra application.`,
 		if err!=nil{
 			panic(err)
 		}
-		tcpserver.TcpServerCreate(serverInfo)
+		tcpserver2.TcpServerCreate(serverInfo)
 	},
 }
 

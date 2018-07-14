@@ -11,20 +11,25 @@ import (
 	"encoding/binary"
 )
 
+
+func init(){
+	log.SetFlags(log.Llongfile|log.LstdFlags)
+}
+
 func ConnectServer(s *utils.ServerInfo) {
 	//data := "this is client...\n"
 	addr := fmt.Sprintf("%s:%d",s.Host,s.Port)
 	var wg  sync.WaitGroup
 
-	for i :=0;i < 10;i++{
+	for i :=0;i < 1000;i++{
 		wg.Add(1)
-		conn, err := net.DialTimeout(s.Proto, addr,time.Second*2)
+		conn, err := net.DialTimeout(s.Proto, addr,time.Second*5)
 		if err != nil {
 			log.Fatal(err)
 			return
 		}
 		defer conn.Close()
-		utils.SetTimeOut(conn, 2)
+		//utils.SetTimeOut(conn, 5)
 		go sender(conn, &wg)
 	}
 	wg.Wait()
@@ -44,9 +49,8 @@ func Packet(msg []byte)[]byte{
 
 func sender(conn net.Conn, wg *sync.WaitGroup){
 	defer wg.Done()
-	for i:=0;i< 300;i++{
+	for i:=0;i< 1000;i++{
 		data := fmt.Sprintf("{\"ID\":%d, \"Name\":\"user-%d\"}", i,i)
-
 		n , err := conn.Write(Packet([]byte(data)))	// ?
 		if err != nil{
 			log.Println(err.Error())
