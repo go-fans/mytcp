@@ -14,6 +14,8 @@ type ServerInfo struct{
 	Proto string
 }
 
+
+
 func NewServer(host,proto string, port int)(*ServerInfo,error){
 	if len(host) == 0|| len(proto) == 0||port <=0{
 		return nil, fmt.Errorf("host,proto or port error")
