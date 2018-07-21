@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="316dab69-4cd3-4332-8e35-c006389bba48" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/cmd/pkg/unix/unix.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/unix/unix.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/unixclient.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/unixclient.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/unixserver.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/unixserver.go" afterDir="false" />
-    </list>
+    <list default="true" id="316dab69-4cd3-4332-8e35-c006389bba48" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,8 +47,8 @@
       <file leaf-file-name="unixserver.go" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cmd/unixserver.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-247">
-              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="391">
+              <caret line="39" column="22" lean-forward="true" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
               <folding>
                 <element signature="e#618#662#0" expanded="true" />
               </folding>
@@ -176,7 +172,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="69" width="1916" height="840" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.123695195" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -508,8 +503,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cmd/unixserver.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-247">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="391">
+          <caret line="39" column="22" lean-forward="true" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
           <folding>
             <element signature="e#618#662#0" expanded="true" />
           </folding>
