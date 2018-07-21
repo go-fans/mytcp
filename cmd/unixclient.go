@@ -18,7 +18,7 @@ import (
 	"fmt"
 
 	"github.com/spf13/cobra"
-	"mytcp/cmd/pkg/unix"
+	"mytcp/cmd/unix"
 )
 
 // unixclientCmd represents the unixclient command
